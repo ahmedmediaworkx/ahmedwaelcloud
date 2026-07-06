@@ -1,0 +1,14 @@
+services:
+  web-dev:
+    image: node:20-alpine
+    container_name: ahmedwaelcloud-web-dev
+    working_dir: /app
+    ports:
+      - "3000:3000"
+    volumes:
+      # Mount source files for hot-reloading
+      - .:/app
+      # Preserve container node_modules independent of the host
+      - /app/node_modules
+    command: npm run dev
+    restart: always

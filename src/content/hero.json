@@ -1,0 +1,32 @@
+{
+  "title": "Engineering Reliable, Scalable Cloud Infrastructure",
+  "subtitle": "Ahmed Wael",
+  "description": "Junior Cloud Engineer focused on Infrastructure as Code, automation, and container orchestration. Building reliable systems with AWS, Docker, Kubernetes, and GitOps workflows to handle scalability from the ground up.",
+  "ctaText": "Explore Architecture",
+  "ctaHref": "#projects",
+  "secondaryCtaText": "Contact Engineer",
+  "secondaryCtaHref": "#contact",
+  "resumeUrl": "#resume",
+  "metrics": [
+    {
+      "label": "AWS Services Handled",
+      "value": "10+",
+      "description": "EC2, VPC, S3, RDS, IAM, ECS, EKS, Route53, CloudWatch, and Lambda"
+    },
+    {
+      "label": "Uptime Target",
+      "value": "99.99%",
+      "description": "Designed for high availability through multi-AZ replication"
+    },
+    {
+      "label": "Deployment Speed",
+      "value": "10x",
+      "description": "CI/CD automations accelerating pipeline releases"
+    },
+    {
+      "label": "Automation Level",
+      "value": "100%",
+      "description": "All infrastructure declared purely as code via Terraform"
+    }
+  ]
+}

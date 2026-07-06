@@ -1,0 +1,97 @@
+[
+  {
+    "id": "gitops-eks",
+    "title": "Multi-Environment GitOps Kubernetes Engine",
+    "subtitle": "AWS EKS, Terraform, ArgoCD, Helm, GitHub Actions & Prometheus",
+    "problem": "Manual application deployments across dev, staging, and production clusters caused configuration drift, inconsistent environmental states, and slow rollback procedures, introducing severe risks of downtime.",
+    "solution": "Architected a fully declarative pull-based GitOps deployment system. The underlying infrastructure (VPC, IAM, EKS) is provisioned via Terraform modules. GitHub Actions builds and scans Docker images, updating Helm values in a dedicated config repo. ArgoCD running in EKS continuously monitors this repository and syncs the clusters dynamically.",
+    "architecture": [
+      "Developer pushes code to the application repository.",
+      "GitHub Actions compiles the code, executes tests, and packages it into a Docker image.",
+      "Trivy scans the image for vulnerabilities before pushing it to Amazon ECR.",
+      "The pipeline automatically updates the tag version in the Helm charts configuration repository.",
+      "ArgoCD detects the manifest update, performs a dry-run comparison, and pulls the new image to deploy it to EKS nodes.",
+      "Prometheus scrapes pod performance, and Grafana displays cluster utilization in real-time."
+    ],
+    "techStack": ["AWS EKS", "Terraform", "ArgoCD", "Helm", "Docker", "GitHub Actions", "Prometheus", "Slack Webhooks"],
+    "challenges": "Handling state synchronization of Kubernetes custom resource definitions (CRDs) and managing secure credentials within Git without committing secrets in plaintext.",
+    "lessonsLearned": "Adopted SealedSecrets alongside AWS Secrets Manager CSI driver to mount secrets natively into containers at runtime, completely avoiding raw secret exposure in Git.",
+    "metrics": [
+      { "label": "Deployment Speed", "value": "2 min" },
+      { "label": "Drift Correlation", "value": "100%" },
+      { "label": "Mean-Time-to-Recovery", "value": "< 30s" }
+    ],
+    "githubUrl": "https://github.com/ahmedwael/gitops-eks-infrastructure",
+    "demoUrl": "https://github.com/ahmedwael/gitops-eks-infrastructure#demo",
+    "diagramSteps": [
+      { "from": "Developer", "to": "GitHub Repository", "action": "Push Code" },
+      { "from": "GitHub Repository", "to": "GitHub Actions", "action": "Trigger Pipeline" },
+      { "from": "GitHub Actions", "to": "Amazon ECR", "action": "Push Docker Image" },
+      { "from": "GitHub Actions", "to": "Helm Config Repo", "action": "Update Tag Manifest" },
+      { "from": "ArgoCD", "to": "Helm Config Repo", "action": "Pull & Poll Manifest" },
+      { "from": "ArgoCD", "to": "Amazon EKS Cluster", "action": "Reconcile State & Sync Pods" }
+    ]
+  },
+  {
+    "id": "immutable-infra",
+    "title": "Immutable Infrastructure Delivery with Packer & Terraform",
+    "subtitle": "AWS EC2, ASG, Packer, Ansible, Application Load Balancer, Route53",
+    "problem": "The traditional server deployment strategy suffered from the 'snowflake server' syndrome. In-place software upgrades frequently drifted from documentation, and automatic scaling actions were too slow because of boot-time configuration scripts.",
+    "solution": "Designed an Immutable Infrastructure pipeline. HashiCorp Packer builds base Amazon Machine Images (AMIs) using Ansible playbooks to pre-install dependencies and configure hardening. Terraform provisions an Auto Scaling Group behind an Application Load Balancer utilizing these pre-baked AMIs, facilitating near-instant scaling and bulletproof rolling deployments.",
+    "architecture": [
+      "Packer provisions temporary instance, applies Ansible playbooks to harden OS, installs runtime, and registers a custom AMI.",
+      "Terraform reads the newly generated AMI ID using data filters.",
+      "An Auto Scaling Group Launch Template is updated with the AMI ID.",
+      "The ASG executes a Rolling Update strategy, spawning new instances and draining connections on old ones.",
+      "An Application Load Balancer distributes incoming user requests across active AZ zones."
+    ],
+    "techStack": ["Packer", "Ansible", "Terraform", "AWS Auto Scaling", "AWS ALB", "Route 53", "Ubuntu Linux"],
+    "challenges": "Optimizing the Packer build duration and avoiding service disruption when replacing active scale group instances.",
+    "lessonsLearned": "Implemented Multi-Stage AMI builds caching the base OS updates and only compiling the latest app package, cutting AMI build times from 15 minutes to under 3 minutes. Configured ASG Lifecycle hooks to gracefully drain active connections.",
+    "metrics": [
+      { "label": "Node Scaling Speed", "value": "< 45s" },
+      { "label": "Configuration Drift", "value": "0%" },
+      { "label": "Rollback Reliability", "value": "100%" }
+    ],
+    "githubUrl": "https://github.com/ahmedwael/immutable-packer-terraform",
+    "diagramSteps": [
+      { "from": "Developer", "to": "Packer Engine", "action": "Run Build Command" },
+      { "from": "Packer Engine", "to": "AWS AMI Registry", "action": "Register Pre-Baked Image" },
+      { "from": "Terraform Modules", "to": "AWS AMI Registry", "action": "Lookup Latest AMI ID" },
+      { "from": "Terraform Modules", "to": "Auto Scaling Group", "action": "Deploy Launch Template" },
+      { "from": "Auto Scaling Group", "to": "App Load Balancer", "action": "Drain & Register Nodes" }
+    ]
+  },
+  {
+    "id": "observability-grid",
+    "title": "Enterprise Observability & Alerting Mesh",
+    "subtitle": "Prometheus, Grafana, Alertmanager, Node Exporter, Blackbox Exporter",
+    "problem": "The engineering team operated in a reactive posture. System issues, disk exhaustion, and microservice latencies were only detected after end-users lodged complaints, resulting in massive business friction.",
+    "solution": "Engineered a centralized monitoring and alerting framework. Deployed Prometheus to scrape resource endpoints via Node Exporters. Configured blackbox probing to track external SSL/HTTP latencies. Created dynamic Grafana dashboards providing real-time CPU, RAM, Network, and IO metrics, and wired Alertmanager to route high-severity triggers straight to Slack.",
+    "architecture": [
+      "Target servers run Prometheus Node Exporter to gather system metrics natively.",
+      "A centralized Prometheus server scrapes all registered targets every 15 seconds.",
+      "Blackbox Exporter probes HTTPS endpoints to monitor response times and SSL certificates.",
+      "Prometheus validates scraping results against pre-defined rules (e.g., Disk > 85%, HTTP 5xx rates).",
+      "If rules fail, Alertmanager groups, silences, and routes notifications to dedicated Slack channels.",
+      "Grafana visualizes these metrics on automated displays with interactive drill-down options."
+    ],
+    "techStack": ["Prometheus", "Grafana", "Alertmanager", "Node Exporter", "Blackbox Exporter", "Slack APIs", "Linux Core Tools"],
+    "challenges": "Reducing noise from flaky alerts (false positives) and tuning prometheus memory usage with high-frequency scraping.",
+    "lessonsLearned": "Implemented alerting thresholds using standard mathematical deviation (predict_linear for disk space, average rate trends for CPU peaks) rather than static ceilings, eliminating 80% of alert noise.",
+    "metrics": [
+      { "label": "Detection Time (MTTD)", "value": "< 90s" },
+      { "label": "Alert Noise Cut", "value": "82%" },
+      { "label": "Data Retention", "value": "30 Days" }
+    ],
+    "githubUrl": "https://github.com/ahmedwael/observability-alerting-mesh",
+    "demoUrl": "https://github.com/ahmedwael/observability-alerting-mesh#grafana",
+    "diagramSteps": [
+      { "from": "Nodes / Pods", "to": "Node Exporter", "action": "Expose Metrics (:9100)" },
+      { "from": "Prometheus Server", "to": "Node Exporter", "action": "Scrape Metrics (15s interval)" },
+      { "from": "Prometheus Server", "to": "Alertmanager", "action": "Send Active Alarm Triggers" },
+      { "from": "Alertmanager", "to": "Slack Channels", "action": "Dispatch Consolidated Alert" },
+      { "from": "Grafana Web UI", "to": "Prometheus Server", "action": "Query Telemetry Data" }
+    ]
+  }
+]

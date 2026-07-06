@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-canvas: #000000;
+  --color-surface-1: #121212;
+  --color-surface-2: #1e1e1e;
+  --color-surface-3: #2b2b2b;
+  --color-hairline: rgba(178, 182, 189, 0.1);
+  --color-hairline-soft: rgba(178, 182, 189, 0.05);
+  --color-ink: #ffffff;
+  --color-ink-muted: #b2b6bd;
+  --color-ink-subtle: #656a76;
+  
+  --color-product-terraform: #7b42bc;
+  --color-product-terraform-bright: #a262f5;
+  --color-product-vault: #ffb800;
+  --color-product-consul: #f63e54;
+  --color-product-waypoint: #00f0ff;
+  --color-product-vagrant: #1868f2;
+  --color-product-nomad: #00c250;
+  --color-product-boundary: #f25c54;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Sane global styling utilities */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+html.ar-mode {
+  --font-sans: "Cairo", sans-serif;
+  font-family: "Cairo", sans-serif;
+}
+
+body {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Custom premium scrollbar styling matching HashiCorp charcoal */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(178, 182, 189, 0.15);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(178, 182, 189, 0.3);
+}
+
+/* HashiCorp ultra-subtle Grid backdrop */
+.hashicorp-grid {
+  background-image: linear-gradient(rgba(178, 182, 189, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(178, 182, 189, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Smooth fade in animation utilities */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

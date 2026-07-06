@@ -1,0 +1,59 @@
+{
+  "username": "ahmedmediaworkx",
+  "profileUrl": "https://github.com/ahmedmediaworkx",
+  "pinnedRepositories": [
+    {
+      "name": "gitops-eks-infrastructure",
+      "description": "Declarative AWS EKS cluster deployment using Terraform, featuring automated ArgoCD application synchronizations, Helm deployments, and custom metrics collection.",
+      "stars": 48,
+      "forks": 12,
+      "language": "HCL (Terraform)",
+      "languageColor": "#7B42BC",
+      "url": "https://github.com/ahmedwael/gitops-eks-infrastructure",
+      "tags": ["kubernetes", "argocd", "terraform", "aws", "gitops"]
+    },
+    {
+      "name": "immutable-packer-terraform",
+      "description": "Packer automated AMI generation backed by Ansible roles, deployed dynamically using Terraform Auto-Scaling groups behind an Application Load Balancer.",
+      "stars": 32,
+      "forks": 8,
+      "language": "HCL (Terraform)",
+      "languageColor": "#7B42BC",
+      "url": "https://github.com/ahmedwael/immutable-packer-terraform",
+      "tags": ["packer", "ansible", "aws", "terraform", "immutable"]
+    },
+    {
+      "name": "observability-alerting-mesh",
+      "description": "A plug-and-play local & cloud monitoring template integrating Prometheus scraper, Blackbox endpoint probes, Alertmanager channels, and Grafana graphs.",
+      "stars": 26,
+      "forks": 5,
+      "language": "Shell",
+      "languageColor": "#89e051",
+      "url": "https://github.com/ahmedwael/observability-alerting-mesh",
+      "tags": ["prometheus", "grafana", "monitoring", "alertmanager", "bash"]
+    },
+    {
+      "name": "kubernetes-security-playground",
+      "description": "A compilation of secure-by-default Kubernetes configurations, containing network policies, non-root pod setups, and PodSecurityStandards overrides.",
+      "stars": 18,
+      "forks": 3,
+      "language": "YAML",
+      "languageColor": "#cb171e",
+      "url": "https://github.com/ahmedwael/kubernetes-security-playground",
+      "tags": ["kubernetes", "security-compliance", "pod-security", "yaml"]
+    }
+  ],
+  "stats": {
+    "commits": 412,
+    "prs": 54,
+    "issues": 19,
+    "contributions": "842 contributions",
+    "topLanguages": [
+      { "name": "HCL / Terraform", "percentage": 48, "color": "#7B42BC" },
+      { "name": "YAML / Kubernetes", "percentage": 24, "color": "#cb171e" },
+      { "name": "Shell Scripting", "percentage": 15, "color": "#89e051" },
+      { "name": "Python / Scripting", "percentage": 10, "color": "#3572A5" },
+      { "name": "TypeScript", "percentage": 3, "color": "#3178c6" }
+    ]
+  }
+}

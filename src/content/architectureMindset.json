@@ -1,0 +1,57 @@
+[
+  {
+    "phase": "01",
+    "title": "Analyze & Isolate",
+    "description": "Deconstruct system requirements, isolate dependencies, and map structural bottlenecks before writing a single line of configuration.",
+    "details": [
+      "Identify load and performance expectations",
+      "Draft boundary networking maps",
+      "Evaluate security compliance requirements"
+    ],
+    "iconName": "Search"
+  },
+  {
+    "phase": "02",
+    "title": "Architect & Model",
+    "description": "Design highly-available, fault-tolerant infrastructure blueprints using proven cloud-native architectural patterns.",
+    "details": [
+      "Multi-AZ, high-availability setups",
+      "Principle of Least Privilege IAM setups",
+      "Cost-optimized resource sizing"
+    ],
+    "iconName": "GitMerge"
+  },
+  {
+    "phase": "03",
+    "title": "Declare as Code",
+    "description": "Define the entire design layout in declarative Terraform and Helm files to ensure 100% reproducible environments.",
+    "details": [
+      "Modular, reusable Terraform files",
+      "Versioned remote state lockers",
+      "Sane, parameter-driven variables"
+    ],
+    "iconName": "FileCode"
+  },
+  {
+    "phase": "04",
+    "title": "Automate delivery",
+    "description": "Construct seamless, multi-stage CI/CD pipelines to build, lint, scan, test, and release code changes without friction.",
+    "details": [
+      "Static code lints and security scans",
+      "Hermetic container image compilation",
+      "Dynamic push/pull-based deployment flows"
+    ],
+    "iconName": "Play"
+  },
+  {
+    "phase": "05",
+    "title": "Observe & Refine",
+    "description": "Continuously collect core metrics, logs, and alarms to verify system stability, response times, and budget parameters.",
+    "details": [
+      "Prometheus resource usage scraping",
+      "Grafana business telemetry dashboards",
+      "Proactive anomaly alerting rules"
+    ],
+    "iconName": "Activity"
+  }
+]

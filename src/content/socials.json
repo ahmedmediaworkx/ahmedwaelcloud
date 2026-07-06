@@ -1,0 +1,17 @@
+[
+  {
+    "platform": "GitHub",
+    "url": "https://github.com/ahmedmediaworkx",
+    "iconName": "Github"
+  },
+  {
+    "platform": "LinkedIn",
+    "url": "https://linkedin.com/in/ahmedmediaworkx",
+    "iconName": "Linkedin"
+  },
+  {
+    "platform": "Email",
+    "url": "mailto:mediaworkx.ahmed@outlook.com",
+    "iconName": "Mail"
+  }
+]

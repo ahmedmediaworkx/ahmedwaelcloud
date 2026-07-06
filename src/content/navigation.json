@@ -1,0 +1,9 @@
+[
+  { "label": "Overview", "href": "#hero" },
+  { "label": "Mindset", "href": "#mindset" },
+  { "label": "Skills", "href": "#skills" },
+  { "label": "Architecture", "href": "#projects" },
+  { "label": "Milestones", "href": "#timeline" },
+  { "label": "Certifications", "href": "#certifications" },
+  { "label": "Ping", "href": "#contact" }
+]

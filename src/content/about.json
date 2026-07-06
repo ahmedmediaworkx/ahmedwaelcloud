@@ -1,0 +1,11 @@
+{
+  "title": "Systems Thinker & Infrastructure Automation Enthusiast",
+  "subtitle": "About Ahmed Wael",
+  "paragraphs": [
+    "I am a Junior Cloud Engineer who approaches infrastructure with a software engineer's precision. I believe that manual infrastructure operations are a form of technical debt. My mission is to translate complex architectural layouts into deterministic, fully-automated code bases that scale, self-heal, and remain cost-efficient.",
+    "My journey began with deep-dives into Linux systems administration and network engineering fundamentals. As I moved to the cloud, I developed a passion for the AWS ecosystem, achieving Solutions Architect Associate competency. I love understanding how packets flow, how resources isolate, and how orchestrators manage containers across clusters.",
+    "I view scalability not as a feature to be added later, but as a foundational design constraint. Whether implementing robust monitoring with Prometheus and Grafana, setting up secure VPC topologies, or crafting declarative CI/CD pipelines, I prioritize reliability, traceability, and secure-by-default postures."
+  ],
+  "careerObjective": "To join a forward-thinking engineering team as a Cloud or DevOps Engineer where I can apply my deep fundamentals in Kubernetes, AWS, and Terraform to automate operations, optimize infrastructure budgets, and guarantee high availability.",
+  "mindsetIntro": "My workflow is modeled after standard systems-engineering loops. I design for failure, build for automation, and measure everything."
+}

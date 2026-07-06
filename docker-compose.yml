@@ -1,0 +1,12 @@
+services:
+  web:
+    image: nginx:alpine
+    container_name: ahmedwaelcloud-web
+    ports:
+      - "8080:80"
+    volumes:
+      # Mount the static build assets as read-only
+      - ./dist:/usr/share/nginx/html:ro
+      # Mount the custom Nginx configuration as read-only
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    restart: unless-stopped

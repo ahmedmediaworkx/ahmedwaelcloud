@@ -1,0 +1,66 @@
+[
+  {
+    "id": "cloud",
+    "title": "Cloud Infrastructure",
+    "description": "Amazon Web Services (AWS) solutions design, networking, and security.",
+    "skills": [
+      { "name": "AWS EC2/VPC/IAM", "level": "Advanced", "iconName": "Cloud" },
+      { "name": "Amazon EKS/ECS", "level": "Intermediate", "iconName": "Server" },
+      { "name": "AWS RDS/S3", "level": "Advanced", "iconName": "Database" },
+      { "name": "AWS Route53 & CloudFront", "level": "Intermediate", "iconName": "Globe" }
+    ]
+  },
+  {
+    "id": "containers",
+    "title": "Containers & Orchestration",
+    "description": "Application packaging, isolation, and production-grade scheduling.",
+    "skills": [
+      { "name": "Docker", "level": "Advanced", "iconName": "Container" },
+      { "name": "Kubernetes", "level": "Intermediate", "iconName": "Layers" },
+      { "name": "Helm Charts", "level": "Intermediate", "iconName": "Anchor" },
+      { "name": "Container Security", "level": "Intermediate", "iconName": "Shield" }
+    ]
+  },
+  {
+    "id": "iac",
+    "title": "Infrastructure as Code",
+    "description": "Declarative resource provisioning and configuration management.",
+    "skills": [
+      { "name": "Terraform", "level": "Advanced", "iconName": "FileCode" },
+      { "name": "Ansible", "level": "Intermediate", "iconName": "Cpu" },
+      { "name": "HCL Declarations", "level": "Advanced", "iconName": "Terminal" }
+    ]
+  },
+  {
+    "id": "cicd",
+    "title": "CI/CD & GitOps",
+    "description": "Automated verification, artifact generation, and deployment delivery.",
+    "skills": [
+      { "name": "GitHub Actions", "level": "Advanced", "iconName": "GitPullRequest" },
+      { "name": "ArgoCD", "level": "Intermediate", "iconName": "RefreshCw" },
+      { "name": "Git & Git Workflows", "level": "Advanced", "iconName": "GitBranch" },
+      { "name": "Docker Registries (ECR/DockerHub)", "level": "Advanced", "iconName": "HardDrive" }
+    ]
+  },
+  {
+    "id": "monitoring",
+    "title": "Observability & Linux",
+    "description": "Telemetry, logging, systems administration, and kernel optimization.",
+    "skills": [
+      { "name": "Prometheus", "level": "Advanced", "iconName": "Activity" },
+      { "name": "Grafana Dashboards", "level": "Advanced", "iconName": "BarChart" },
+      { "name": "Linux Bash Scripting", "level": "Advanced", "iconName": "Terminal" },
+      { "name": "Linux Networking & SSH", "level": "Advanced", "iconName": "Network" }
+    ]
+  },
+  {
+    "id": "languages",
+    "title": "Development & Scripting",
+    "description": "High-quality scripting for toolmaking, APIs, and automation.",
+    "skills": [
+      { "name": "Python", "level": "Intermediate", "iconName": "Code" },
+      { "name": "Go (Golang)", "level": "Learning", "iconName": "Cpu" },
+      { "name": "Node.js & TypeScript", "level": "Intermediate", "iconName": "Layers" }
+    ]
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "step-1",
+    "title": "Linux & Networking Fundamentals",
+    "organization": "Self-Directed Mastery & Labs",
+    "description": "Deep-dived into POSIX fundamentals, bash scripting, cron jobs, file permissions, and TCP/IP networking loops. Set up home server infrastructure to learn DNS, static routing, and server hardening techniques.",
+    "iconName": "Terminal",
+    "techTags": ["Linux Bash", "TCP/IP", "DNS/DHCP", "SSH Keys", "Systemd"]
+  },
+  {
+    "id": "step-2",
+    "title": "AWS Systems Design",
+    "organization": "Solutions Architect Training",
+    "description": "Mastered cloud-native patterns on AWS. Designed secure multi-tier virtual private networks (VPCs) with public/private subnets, NAT gateways, security groups, IAM least-privilege policies, and managed databases.",
+    "iconName": "Cloud",
+    "techTags": ["AWS VPC", "EC2", "S3", "RDS", "IAM Policies"]
+  },
+  {
+    "id": "step-3",
+    "title": "Containerization & Microservices",
+    "organization": "Docker & Container Runtime Labs",
+    "description": "Learned how to dockerize applications, compose multi-container environments, optimize Dockerfile build layers for size and security, and manage local volumes and virtual bridge networks.",
+    "iconName": "Container",
+    "techTags": ["Docker Engine", "Docker Compose", "Multi-stage Builds", "Alpine Linux"]
+  },
+  {
+    "id": "step-4",
+    "title": "Infrastructure as Code",
+    "organization": "HashiCorp Terraform Associate",
+    "description": "Transitioned all infrastructure tasks to declarative code. Wrote reusable, version-controlled Terraform modules with remote state backend locking using AWS S3 and DynamoDB.",
+    "iconName": "FileCode",
+    "techTags": ["Terraform CLI", "S3 State Locking", "Terraform Modules", "HCL"]
+  },
+  {
+    "id": "step-5",
+    "title": "Enterprise Observability Grid",
+    "organization": "Monitoring and Alarm Design",
+    "description": "Deployed telemetry collection meshes using Prometheus. Set up Grafana panels tracking application performance thresholds and integrated Alertmanager notifications with Slack channels.",
+    "iconName": "Activity",
+    "techTags": ["Prometheus", "Grafana", "Node Exporter", "Alertmanager"]
+  },
+  {
+    "id": "step-6",
+    "title": "Kubernetes, GitOps & CI/CD",
+    "organization": "Cloud Native Orchestration",
+    "description": "Configured Kubernetes pods, deployments, services, configMaps, and ingress rules. Integrated pull-based GitOps loops with ArgoCD, establishing continuous automated delivery lines.",
+    "iconName": "Layers",
+    "techTags": ["Kubernetes", "ArgoCD", "Helm Charts", "GitHub Actions", "GitOps"]
+  }
+]

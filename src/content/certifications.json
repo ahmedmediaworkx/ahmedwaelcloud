@@ -1,0 +1,30 @@
+[
+  {
+    "id": "aws-saa",
+    "title": "AWS Certified Solutions Architect – Associate",
+    "issuer": "Amazon Web Services (AWS)",
+    "status": "Preparing",
+    "iconName": "Cloud"
+  },
+  {
+    "id": "tf-assoc",
+    "title": "HashiCorp Certified: Terraform Associate (003)",
+    "issuer": "HashiCorp",
+    "status": "Preparing",
+    "iconName": "FileCode"
+  },
+  {
+    "id": "cka",
+    "title": "Certified Kubernetes Administrator (CKA)",
+    "issuer": "Cloud Native Computing Foundation (CNCF)",
+    "status": "Future",
+    "iconName": "Layers"
+  },
+  {
+    "id": "aws-dop",
+    "title": "AWS Certified DevOps Engineer – Professional",
+    "issuer": "Amazon Web Services (AWS)",
+    "status": "Future",
+    "iconName": "Cpu"
+  }
+]
